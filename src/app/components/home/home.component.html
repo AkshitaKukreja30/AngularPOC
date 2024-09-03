@@ -1,3 +1,26 @@
 <mat-card appearance="outlined">
-    <mat-card-content>Welcome Home</mat-card-content>
+    <br>
+    <!-- This is  Interpolation -->
+    <mat-card-title>{{mesageFromHome | uppercase}}</mat-card-title>
+    <span>{{currentDate | date: 'dd/MM/YYYY'}}</span>
+    <span>{{jsonObj | json}}</span>
+    <br>
+    <!-- This is  Property binding -->
+    <mat-card-content><img [src] = "imageUrl" height="20%" width="40%"></mat-card-content>
+    <div class="example-button-row">
+    <mat-divider></mat-divider>
+       <!-- This is also Property binding. [disabled] is the property and isDisabled is the value from ts -->
+    <input type="checkbox" [disabled]="isDisabled"> 
+    <br>
+
+    <br>This is event binding. Change in view updates the component also
+    <input type = "text" (keyup)="updateTitle($event)">
+    <br><br>
+    <button mat-raised-button (click)="onButtonClick()">Basic</button>
+
+    <br>
+    <br> This is 2 way binding. Change in view updates the component and change in component updates the view-
+    <input type = "text" [(ngModel)]="mesageFromHome">
+    </div>
+
 </mat-card>
