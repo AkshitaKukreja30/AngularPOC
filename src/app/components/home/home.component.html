@@ -23,4 +23,24 @@
     <input type = "text" [(ngModel)]="mesageFromHome">
     </div>
 
+    <br>
+    <!-- given class is applied only when enableAttributeDirectives is true and when active is applied  -->
+    <div [ngClass]="{'active':enableAttributeDirectives }"><h2>Attribute Directive. Ng Class</h2></div>
+    <div [ngStyle]="{'color': _color, 'font-size': _font}"><h2>Attribute Directive. Ng Class</h2></div>
+
+    <div *ngIf="enableAttributeDirectives"><h3>Structural Directive, Ng If</h3></div>
+
+    <div *ngFor="let item of listOfJsonObjs">{{item.value | json}}</div>
+
+    <div>
+    <input type = "text"  [(ngModel)]="inputDay">
+    <div [ngSwitch]="inputDay">
+        <div *ngSwitchCase="'Monday'">Start of the week!</div>
+        <div *ngSwitchCase="'Saturday'">Weekend!</div>
+        <div *ngSwitchCase="'Sunday'">Weekend!</div>
+        <div *ngSwitchDefault>Regular weekday</div>
+    </div>
+    </div>
+
+
 </mat-card>

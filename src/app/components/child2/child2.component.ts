@@ -10,7 +10,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './child2.component.css'
 })
 export class Child2Component implements OnInit {
-
   routevalue :any;
 
   constructor(private route: ActivatedRoute ){

@@ -20,8 +20,20 @@ export class HomeComponent {
     "key2" : "secondKey",
     "key3" : "thirdKey"
   }
+
+  listOfJsonObjs = [
+    {'id':1, 'name': 'name1', 'value': 'v1'},
+    {'id':2, 'name': 'name2', 'value': 'v2'},
+    {'id':3, 'name': 'name3', 'value': 'v3'}
+  ]
+
   imageUrl: string = 'https://www.littlethings.info/wp-content/uploads/2014/04/dummy-image-green-e1398449160839.jpg';
   isDisabled: boolean = false;
+  inputDay: string = "";
+
+  enableAttributeDirectives: boolean = true;
+  _color = 'yellow';
+  _font = 34;
 
   onButtonClick() {
     console.log('Button was clicked!');
