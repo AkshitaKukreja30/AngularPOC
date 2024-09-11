@@ -1,0 +1,24 @@
+<mat-card>
+ <mat-card-header><h2>Login</h2></mat-card-header>
+ <mat-card-content>
+<!-- The #loginForm is a template reference variable that refers to the form itself. By assigning it to "ngForm", you are connecting it to Angular's NgForm directive, which is used to track the form's validity, manage form controls, and handle form submissions.
+With this reference variable, you can easily access form properties like loginForm.valid or loginForm.controls for validation purposes within the component. -->
+    <form class="example-form" #loginForm="ngForm" (ngSubmit)="ProceedLogin(loginForm)">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput name="username" [(ngModel)]="loginModel.username" required  #username="ngModel"/>
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" name="password" [(ngModel)]="loginModel.password" #password="ngModel" required />
+        </mat-form-field>
+      
+        <mat-card-actions>
+            <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button>
+            <a mat-raised-button color="accent" routerLink="/register">New user?</a>
+        </mat-card-actions>
+    
+      </form>
+ </mat-card-content>
+</mat-card>
