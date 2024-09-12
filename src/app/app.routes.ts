@@ -19,6 +19,8 @@ export const routes: Routes = [
     { path: 'home' , component: HomeComponent, canActivate: [AuthGuard]},
     {path: 'lifecycle', loadComponent: () => import('./components/lifecyclehook/lifecyclehook.component').then(x => x.LifecyclehookComponent)},
     {path: 'login', loadComponent: () => import('./components/login/login.component').then(x => x.LoginComponent)},
+    {path: 'register', loadComponent: () => import('./components/register/register.component').then(x => x.RegisterComponent)},
+
 
     {path : '**', component:PageNotFoundComponent}
 ];
