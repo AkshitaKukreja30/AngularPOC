@@ -1,14 +1,115 @@
 {
-    "users": [
-      { "id": "1", "name": "sales1", "password": "password", "role":"sales" },
-      { "id": "2", "name": "admin1", "password": "password", "role":"admin" },
-      { "id": "3", "name": "cust1", "password": "password", "role":"customer" }
-    ],
-    "comments": [
-      { "id": "1", "text": "a comment about post 1", "postId": "1" },
-      { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-      "name": "typicode"
+  "users": [
+    {
+      "id": "1",
+      "name": "sales1",
+      "password": "password",
+      "role": "sales"
+    },
+    {
+      "id": "2",
+      "name": "admin1",
+      "password": "password",
+      "role": "admin"
+    },
+    {
+      "id": "3",
+      "name": "cust1",
+      "password": "password",
+      "role": "customer"
+    },
+    {
+      "id": "user",
+      "name": "DefaultName",
+      "role": "salesman",
+      "gender": "f",
+      "email": "abcd@adbc.com"
+    },
+    {
+      "id": "user",
+      "name": "DefaultName",
+      "role": "admin",
+      "gender": "f",
+      "email": "abcd@adbc.com"
+    },
+    {
+      "id": "user",
+      "name": "DefaultName",
+      "role": "admin",
+      "gender": "f",
+      "email": "abcd@adbc.com"
+    },
+    {
+      "id": "user",
+      "name": "DefaultName",
+      "role": "admin",
+      "gender": "m",
+      "email": "abcd@adbc.com"
+    },
+    {
+      "id": "admin11",
+      "name": "DefaultName",
+      "role": "salesman",
+      "gender": "m",
+      "email": "abcd@adbc.com"
     }
-  }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Cricket bat",
+      "description": "High quality we can use for leather ball",
+      "price": "10001",
+      "status": true
+    },
+    {
+      "id": 2,
+      "name": "Stumbber ball",
+      "description": "Rubber ball",
+      "price": "25",
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "Keeping clove",
+      "description": "clove new",
+      "price": "300",
+      "status": true
+    },
+    {
+      "id": 4,
+      "name": "tennis bat",
+      "description": "new",
+      "price": "11",
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "product2",
+      "description": "DescriptionNew",
+      "price": "10000",
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "randomNew",
+      "description": "new",
+      "price": "2000",
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "product4",
+      "description": "descriptionVeryNew",
+      "price": "200000",
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "newest",
+      "description": "aaaa",
+      "price": "4000",
+      "status": true
+    }
+  ]
+}

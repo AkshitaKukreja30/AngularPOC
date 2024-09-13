@@ -5,7 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginService } from '../../Services/login.service';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+import { response } from 'express';
 
 
 
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor(private service: LoginService){
+  constructor(private service: LoginService, private router: Router){
   }
 
   ngOnInit(): void {
@@ -44,7 +45,14 @@ export class LoginComponent implements OnInit {
     this.service.ProceedLogin(this.loginModel).subscribe(result => {
       let _response = result;
       console.log(_response);
-      localStorage.setItem("userName", this.loginModel.username);
+      if( _response.length > 0){
+        localStorage.setItem("userName", this.loginModel.username);
+        this.router.navigateByUrl("home");
+      }
+      else{
+        alert("Invalid credentials");
+      }
+     
     });
 
   }

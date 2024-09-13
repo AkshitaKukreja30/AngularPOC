@@ -1,1 +1,53 @@
-<p>register works!</p>
+<mat-card>
+    <mat-card-header><h2>New Registration</h2></mat-card-header>
+    <mat-card-content>
+   <!-- The #loginForm is a template reference variable that refers to the form itself. By assigning it to "ngForm", you are connecting it to Angular's NgForm directive, which is used to track the form's validity, manage form controls, and handle form submissions.
+   With this reference variable, you can easily access form properties like loginForm.valid or loginForm.controls for validation purposes within the component. -->
+       <form class="example-form" [formGroup]="registerForm" (ngSubmit)="ProceedRegister()">
+           <mat-form-field appearance="fill">
+             <mat-label>Username</mat-label>
+             <input matInput name="username" formControlName="username"/>
+           </mat-form-field>
+         
+           <mat-form-field appearance="fill">
+             <mat-label>Name</mat-label>
+             <input matInput name="name" formControlName="name"/>
+           </mat-form-field>
+
+           <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput name="email" formControlName="email"/>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Role</mat-label>
+          <mat-select formControlName="roleName">
+            @for(role of roles; track role){
+                <mat-option [value]="role.value">{{role.viewValue}}</mat-option>
+            }
+          </mat-select>
+          </mat-form-field>
+
+          <div>
+            <mat-radio-group aria-label="Gender" formControlName="gender">
+            <mat-radio-button value="f" color="primary" > Female </mat-radio-button>
+            <mat-radio-button value="m"> Male </mat-radio-button>
+            <mat-radio-button value="o"> Others </mat-radio-button>
+        </mat-radio-group>
+          </div>
+
+          <div>
+            <section class ="example-section">
+                <mat-checkbox color="primary" class = "example-margin" formControlName="terms">Agree to Terms</mat-checkbox>
+            </section>
+          </div>
+         
+           <mat-card-actions>
+               <!-- <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button> -->
+               <button type="submit" mat-raised-button color="primary">Register</button>
+               <a mat-raised-button color="accent" routerLink="/login">Login?</a>
+           </mat-card-actions>
+       
+         </form>
+    </mat-card-content>
+   </mat-card>

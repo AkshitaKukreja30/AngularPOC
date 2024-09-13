@@ -9,7 +9,7 @@ import { g2Guard } from './Guards/g2.guard';
 
 export const routes: Routes = [
 
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'children', canActivateChild: [AuthGuard],
         children: [
             { path: 'child1',  loadComponent: () => import('./components/child1/child1.component').then(m => m.Child1Component)},
@@ -20,6 +20,8 @@ export const routes: Routes = [
     {path: 'lifecycle', loadComponent: () => import('./components/lifecyclehook/lifecyclehook.component').then(x => x.LifecyclehookComponent)},
     {path: 'login', loadComponent: () => import('./components/login/login.component').then(x => x.LoginComponent)},
     {path: 'register', loadComponent: () => import('./components/register/register.component').then(x => x.RegisterComponent)},
+    {path: 'product', loadComponent: () => import('./components/products/products.component').then(x => x.ProductsComponent)},
+
 
 
     {path : '**', component:PageNotFoundComponent}

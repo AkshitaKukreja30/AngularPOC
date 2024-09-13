@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-header><h2>New Product Addition</h2></mat-card-header>
+    <mat-card-content>
+   <!-- The #loginForm is a template reference variable that refers to the form itself. By assigning it to "ngForm", you are connecting it to Angular's NgForm directive, which is used to track the form's validity, manage form controls, and handle form submissions.
+   With this reference variable, you can easily access form properties like loginForm.valid or loginForm.controls for validation purposes within the component. -->
+       <form class="example-form" [formGroup]="productForm" (ngSubmit)="AddProduct()">
+           <mat-form-field appearance="fill">
+             <mat-label>Name</mat-label>
+             <input matInput name="name" formControlName="name"/>
+           </mat-form-field>
+         
+           <mat-form-field appearance="fill">
+             <mat-label>Description</mat-label>
+             <input matInput name="description" formControlName="description"/>
+           </mat-form-field>
+
+           <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput name="price" formControlName="price"/>
+          </mat-form-field>
+
+          <div>
+            <section class ="example-section">
+                <mat-checkbox color="primary" class = "example-margin" formControlName="status">Status</mat-checkbox>
+            </section>
+          </div>
+
+          <mat-card-actions>
+               <!-- <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button> -->
+               <button type="submit" mat-raised-button color="primary">Add Product</button>
+               <button type="submit" mat-raised-button color="accent" (click)="Cancel()">Cancel</button>
+
+           </mat-card-actions>
+       
+         </form>
+    </mat-card-content>
+   </mat-card>

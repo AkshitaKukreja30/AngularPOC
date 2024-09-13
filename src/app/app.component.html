@@ -1,19 +1,23 @@
-<mat-card appearance="outlined">
+<!-- <mat-card appearance="outlined">
     <mat-card-content>Main container for entire app</mat-card-content>
 </mat-card>
 
-<!-- <router-outlet> is essential for Angular's routing mechanism, acting as a placeholder where the routed components are dynamically rendered.
+<router-outlet> is essential for Angular's routing mechanism, acting as a placeholder where the routed components are dynamically rendered.
     It is typically placed in the root component’s template but can be used in any component to facilitate nested or complex routing.
     It enables dynamic content loading based on the current URL, allowing you to build single-page applications (SPAs) with multiple views and a consistent layout. -->
 
-<main>
-    <app-child1></app-child1> <!-- to render child component inside the main component-->
+<!-- <main>
+    <app-child1></app-child1> - to render child component inside the main component-->
 
-    <router-outlet></router-outlet>  
+    <!-- <router-outlet></router-outlet>  
 
     <a routerLink = "home">Home</a>
     <a routerLink = "children/child1">Child1</a>
     <a routerLink = "children/child2/1">Child2</a>
 
 
-</main>
+</main>  -->
+
+
+<app-appmenu></app-appmenu>
+<router-outlet />
