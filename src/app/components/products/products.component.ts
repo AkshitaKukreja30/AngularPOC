@@ -9,7 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import { AddproductdailogComponent } from '../../addproductdailog/addproductdailog.component';
+import { Products } from '../../Models/products';
+import { AddproductdailogComponent } from '../addproductdailog/addproductdailog.component';
 
 
 @Component({
@@ -50,8 +51,8 @@ LoadProducts(){
 }
 
 
-EditProduct(id: number){
-
+EditProduct(id: any){
+  this.OpenPopUp(id, "Edit Product");
 }
 
 DeleteProduct(id: number){
@@ -59,14 +60,18 @@ DeleteProduct(id: number){
 }
 
 AddProduct(): void{
-this.OpenPopUp();
+this.OpenPopUp(0,"Add Product");
 }
 
-OpenPopUp(){
+OpenPopUp(id: number, title : string){
 this.matDialog.open(AddproductdailogComponent,
   {
     width: '40%',
-    height: '60%'
+    height: '60%',
+    data: {
+      id: id,
+      title : title
+    }
   }).afterClosed().subscribe(item => {
     this.LoadProducts();
   });

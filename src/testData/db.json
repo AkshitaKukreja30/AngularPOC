@@ -17,98 +17,56 @@
       "name": "cust1",
       "password": "password",
       "role": "customer"
-    },
-    {
-      "id": "user",
-      "name": "DefaultName",
-      "role": "salesman",
-      "gender": "f",
-      "email": "abcd@adbc.com"
-    },
-    {
-      "id": "user",
-      "name": "DefaultName",
-      "role": "admin",
-      "gender": "f",
-      "email": "abcd@adbc.com"
-    },
-    {
-      "id": "user",
-      "name": "DefaultName",
-      "role": "admin",
-      "gender": "f",
-      "email": "abcd@adbc.com"
-    },
-    {
-      "id": "user",
-      "name": "DefaultName",
-      "role": "admin",
-      "gender": "m",
-      "email": "abcd@adbc.com"
-    },
-    {
-      "id": "admin11",
-      "name": "DefaultName",
-      "role": "salesman",
-      "gender": "m",
-      "email": "abcd@adbc.com"
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Cricket bat",
       "description": "High quality we can use for leather ball",
       "price": "10001",
       "status": true
     },
     {
-      "id": 2,
-      "name": "Stumbber ball",
+      "id": "2",
       "description": "Rubber ball",
       "price": "25",
+      "name": "Stumbber ball",
       "status": true
     },
     {
-      "id": 3,
+      "id": "3",
+      "description": "clove newe",
+      "price": "3000",
       "name": "Keeping clove",
-      "description": "clove new",
-      "price": "300",
       "status": true
     },
     {
-      "id": 4,
-      "name": "tennis bat",
-      "description": "new",
-      "price": "11",
+      "id": "4",
+      "description": "16sep109",
+      "price": "9187",
+      "name": "16sep100",
       "status": true
     },
     {
-      "id": 0,
-      "name": "product2",
-      "description": "DescriptionNew",
-      "price": "10000",
+      "id": "6338",
+      "description": "hjahahhaTYAIE",
+      "price": "19099",
+      "name": "hahhaAA",
       "status": true
     },
     {
-      "id": 0,
-      "name": "randomNew",
-      "description": "new",
-      "price": "2000",
+      "id": "b5e4",
+      "description": "yayyayaU",
+      "price": "1899",
+      "name": "aaUU",
       "status": true
     },
     {
-      "id": 0,
-      "name": "product4",
-      "description": "descriptionVeryNew",
-      "price": "200000",
-      "status": true
-    },
-    {
-      "id": 0,
-      "name": "newest",
-      "description": "aaaa",
-      "price": "4000",
+      "id": "503e",
+      "description": "yayyaya2",
+      "price": "100",
+      "name": "lallalaaa",
       "status": true
     }
   ]
