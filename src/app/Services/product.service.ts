@@ -31,7 +31,8 @@ export class ProductService {
     return this.httpClient.put(this.baseUrl + '/' + data.id, data);
   }
 
-  RemoveProduct(id: number){
+  RemoveProduct(id: any){
+    console.log('deleting');
     return this.httpClient.delete(this.baseUrl+ "/"+ id);
   }
 

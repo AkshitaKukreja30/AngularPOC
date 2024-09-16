@@ -55,7 +55,14 @@ EditProduct(id: any){
   this.OpenPopUp(id, "Edit Product");
 }
 
-DeleteProduct(id: number){
+DeleteProduct(id: any){
+if(confirm("Are you sure you want to delete this?")){
+  this.productService.RemoveProduct(id).subscribe(result => {
+    alert('Deleted successfully');
+    this.LoadProducts();
+  });
+
+}
 
 }
 
