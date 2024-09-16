@@ -10,6 +10,7 @@ import { ProductService } from '../../Services/product.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Products } from '../../Models/products';
 import { ProductsDTO } from '../../DTO/ProductsDTO';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-addproductdailog',
@@ -25,7 +26,13 @@ export class AddproductdailogComponent implements OnInit {
 _dialogData : any;
 productInfo !: ProductsDTO ;
 
-constructor(private productService: ProductService, private formBuilder: FormBuilder, private dialogRef: MatDialogRef<AddproductdailogComponent>, @Inject(MAT_DIALOG_DATA) public dialogData : any){}
+constructor(
+  private productService: ProductService, 
+  private formBuilder: FormBuilder,
+   private dialogRef: MatDialogRef<AddproductdailogComponent>, 
+   @Inject(MAT_DIALOG_DATA) public dialogData : any,
+  private toasterService: ToastrService 
+  ){}
   
 ngOnInit(): void {
    this._dialogData = this.dialogData;
@@ -74,7 +81,7 @@ AddProduct(){
   } 
 
 this.productService.CreateProduct(newProduct).subscribe( result => {
-  alert("Product created successfully");
+  this.toasterService.success("Product created successfully");
   this.productForm.reset();
   this.dialogRef.close();
 });
@@ -84,12 +91,10 @@ this.productService.CreateProduct(newProduct).subscribe( result => {
 
 
 Cancel(){
-  console.log("inside cancel");
   this.dialogRef.close();
 }
 
 UpdateProduct(){
-  console.log("inside update");
 
   let updatedProduct : ProductsDTO = {
     id: this.productForm.value.id ,
@@ -102,7 +107,7 @@ UpdateProduct(){
   console.log(updatedProduct);
 
   this.productService.Updateproduct(updatedProduct).subscribe( result => {
-    alert("Product Updated successfully");
+    this.toasterService.success("Product Updated successfully");
     this.productForm.reset();
     this.dialogRef.close();
   });

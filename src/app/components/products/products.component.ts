@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { Products } from '../../Models/products';
 import { AddproductdailogComponent } from '../addproductdailog/addproductdailog.component';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -22,7 +23,7 @@ import { AddproductdailogComponent } from '../addproductdailog/addproductdailog.
 })
 export class ProductsComponent implements OnInit{
 
-constructor(private productService: ProductService, private matDialog : MatDialog){}
+constructor(private productService: ProductService, private matDialog : MatDialog, private toasterService: ToastrService){}
  
 
 displayedColumns: string[] = ['id', 'name', 'description', 'price', 'status', 'action'];
@@ -58,7 +59,7 @@ EditProduct(id: any){
 DeleteProduct(id: any){
 if(confirm("Are you sure you want to delete this?")){
   this.productService.RemoveProduct(id).subscribe(result => {
-    alert('Deleted successfully');
+    this.toasterService.success('Deleted successfully');
     this.LoadProducts();
   });
 
