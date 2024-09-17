@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
@@ -36,6 +36,11 @@ export class HomeComponent {
   _color = 'yellow';
   _font = 34;
   parentData: string = 'This string has been passed from parent to child using @Input';
+  dataFromChild : string = ''
+
+  receiveData(data: string) {
+    this.dataFromChild = data;
+  }
 
   onButtonClick() {
     console.log('Button was clicked!');

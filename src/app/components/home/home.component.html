@@ -42,7 +42,8 @@
     </div>
     </div>
 
-    <app-child1 [dataFromParent]="parentData"></app-child1>
+    <app-child1 [dataFromParent]="parentData"  (dataFromChild)="receiveData($event)"></app-child1>
+    <p>Hi : {{dataFromChild}}</p>
 
 
 </mat-card>
