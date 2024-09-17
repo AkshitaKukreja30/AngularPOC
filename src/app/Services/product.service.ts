@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Products } from '../Models/products';
@@ -22,6 +22,13 @@ export class ProductService {
   GetProducts() {
     return this.httpClient.get<ProductsDTO[]>(this.baseUrl);
   }
+
+  GetProductsWithToken() {
+    let token = 'randomToken';
+    let _headers = new HttpHeaders().set("Authorization", "Bearer " + token);
+    return this.httpClient.get<ProductsDTO[]>(this.baseUrl, { headers: _headers});
+  }
+
 
   CreateProduct(data : Products){
     return this.httpClient.post(this.baseUrl, data);
