@@ -4,11 +4,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Child1Component } from '../child1/child1.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatDividerModule, CommonModule, FormsModule],
+  imports: [MatCardModule, MatButtonModule, MatDividerModule, CommonModule, FormsModule, Child1Component],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -34,6 +35,7 @@ export class HomeComponent {
   enableAttributeDirectives: boolean = true;
   _color = 'yellow';
   _font = 34;
+  parentData: string = 'This string has been passed from parent to child using @Input';
 
   onButtonClick() {
     console.log('Button was clicked!');

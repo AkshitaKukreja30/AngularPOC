@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -9,5 +9,7 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './child1.component.css'
 })
 export class Child1Component {
+
+  @Input() dataFromParent: string = ''; 
 
 }
