@@ -10,8 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { Products } from '../../Models/products';
-import { AddproductdailogComponent } from '../addproductdailog/addproductdailog.component';
 import { ToastrService } from 'ngx-toastr';
+import { AddproductdailogComponent } from '../addproductdailog/addproductdailog.component';
 
 
 @Component({
