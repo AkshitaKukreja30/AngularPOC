@@ -15,10 +15,15 @@ export class Child1Component {
   @Input() dataFromParent: string = ''; 
   @Output() dataFromChild = new EventEmitter<string>();
 
+  fruits = ['Apple', 'Orange', 'Guava'];
 
  SendDataToParent(){
   this.dataFromChild.emit('I am being sent from child to parent');
   console.log("data sent");
+ }
+
+ AddFruits(fruit: string){
+  this.fruits.push(fruit);
  }
 
 }

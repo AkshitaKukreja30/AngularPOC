@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, ViewChild } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
@@ -38,8 +38,10 @@ export class HomeComponent {
   parentData: string = 'This string has been passed from parent to child using @Input';
   dataFromChild : string = ''
 
+  @ViewChild(Child1Component) childComponent : Child1Component
+
   receiveData(data: string) {
-    this.dataFromChild = data;
+    this.dataFromChild = data;  
   }
 
   onButtonClick() {
@@ -55,6 +57,13 @@ export class HomeComponent {
   updateTitle(event: any){
     this.mesageFromHome = event.target.value;
   }
+
+  AddFruit(fruit: string){
+    this.childComponent.AddFruits(fruit);
+  }
+
+
+  
 }
 
 

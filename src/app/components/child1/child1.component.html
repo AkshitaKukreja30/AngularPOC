@@ -3,6 +3,11 @@
         <p>{{dataFromParent}}</p>
         Rendering from child component 1 inside the main parent component : app component
         <button mat-raised-button color="primary"(click) = "SendDataToParent()">Send Data to Parent</button>
+        <ul>@for(fruit of fruits; track fruit)
+            {
+            <li>{{fruit}}</li>
+            }
+        </ul>
     </mat-card-content>
 </mat-card>
 

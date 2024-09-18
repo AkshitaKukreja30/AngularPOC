@@ -44,6 +44,8 @@
 
     <app-child1 [dataFromParent]="parentData"  (dataFromChild)="receiveData($event)"></app-child1>
     <p>Hi : {{dataFromChild}}</p>
+    <input type="text" placeholder="fruit" #fruit/>
+    <button (click)="AddFruit(fruit.value)">Add</button>
 
 
 </mat-card>
