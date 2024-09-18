@@ -23,6 +23,11 @@ export const routes: Routes = [
     {path: 'register', loadComponent: () => import('./components/register/register.component').then(x => x.RegisterComponent)},
     {path: 'product', loadComponent: () => import('./components/products/products.component').then(x => x.ProductsComponent)},
     {path: 'signal', loadComponent: () => import('./components/learningsignal/learningsignal.component').then(x => x.LearningsignalComponent)},
+    {path: 'rxjs', loadComponent: () => import('./components/learnrxjs/learnrxjs.component').then(x => x.LearnrxjsComponent)},
+
+
+
+
 
 
 
