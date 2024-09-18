@@ -1,3 +1,18 @@
 <p>learningsignal works!</p>
 <app-counterbtn></app-counterbtn>
 <app-counterdisplay></app-counterdisplay>
+
+@defer(on timer(10000ms))
+{
+    <p>Angular 18</p>
+} @placeholder{
+    <p>Data will be available soon</p>
+}
+
+@defer(on hover)
+{
+    <p>Ouch</p>
+} @placeholder{
+    <p>Data will be available after hover</p>
+}
+

@@ -1,9 +1,11 @@
 <p>counterdisplay works!</p>
 <p>Counter value is {{ signalService.counterVal() }}</p>
-<!-- <p>{{signalService.players()}}</p> -->
 <ul>@for(player of signalService.players(); track player)
     {
     <li>{{player}}</li>
     }
 </ul>
 <p> Total Players: {{totalPlayers()}}</p>
+<p> Total Players: {{totalPlayers$ | async}}</p>
+<p> Total Players: {{signalCount()}}</p>
+
