@@ -1,4 +1,4 @@
-import { Component, effect, OnInit } from '@angular/core';
+import { Component, computed, effect, OnInit } from '@angular/core';
 import { LearningsignalService } from '../../Services/learningsignal.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { LearningsignalService } from '../../Services/learningsignal.service';
 export class CounterdisplayComponent {
 
 counterDisplayVal : number ;
+totalPlayers = computed( () => this.signalService.players().length )
 
 constructor(public signalService: LearningsignalService){
   effect( () => {

@@ -8,4 +8,6 @@ export class LearningsignalService {
   constructor() { }
 
   counterVal = signal<number>(0);
+  players = signal<string[]>(['Kohli']);
+
 }

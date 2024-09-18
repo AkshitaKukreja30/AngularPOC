@@ -1,5 +1,17 @@
 <p>counterbtn works!</p>
+<div style ="margin: 5%;">
 <button mat-raised-button color="primary" (click)="Increment()">+</button>
 <button mat-raised-button color="accent"  (click)="Decrement()">-</button>
 <button mat-raised-button color="warn" (click)="Reset()" >Reset</button>
+</div>
+<br>
+<div>
+<mat-form-field appearance="fill">
+    <mat-label>Player</mat-label>
+    <input matInput #player/>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" (click)="AddPlayer(player.value)" >Add to Team</button>
+</div>
+
 
