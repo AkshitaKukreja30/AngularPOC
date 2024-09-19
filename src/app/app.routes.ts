@@ -24,6 +24,8 @@ export const routes: Routes = [
     {path: 'product', loadComponent: () => import('./components/products/products.component').then(x => x.ProductsComponent)},
     {path: 'signal', loadComponent: () => import('./components/learningsignal/learningsignal.component').then(x => x.LearningsignalComponent)},
     {path: 'rxjs', loadComponent: () => import('./components/learnrxjs/learnrxjs.component').then(x => x.LearnrxjsComponent)},
+    {path: 'productv2', loadComponent: () => import('./components/product-v2/product-v2.component').then(x => x.ProductV2Component)},
+
 
 
 

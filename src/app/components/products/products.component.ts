@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../../Services/product.service';
 import { ProductsDTO } from '../../DTO/ProductsDTO';
 import { MatCardModule } from '@angular/material/card';
@@ -12,6 +12,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { Products } from '../../Models/products';
 import { ToastrService } from 'ngx-toastr';
 import { AddproductdailogComponent } from '../addproductdailog/addproductdailog.component';
+import { catchError, of, Subscription } from 'rxjs';
 
 
 @Component({
@@ -21,9 +22,14 @@ import { AddproductdailogComponent } from '../addproductdailog/addproductdailog.
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
-export class ProductsComponent implements OnInit{
+export class ProductsComponent implements OnInit, OnDestroy{
 
 constructor(private productService: ProductService, private matDialog : MatDialog, private toasterService: ToastrService){}
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
+subscriptions = new Subscription();
  
 
 displayedColumns: string[] = ['id', 'name', 'description', 'price', 'status', 'action'];
@@ -40,7 +46,15 @@ productList : ProductsDTO []= []
 
 
 LoadProducts(){
-  return this.productService.GetProducts().subscribe(
+  let subscription1 =  this.productService.GetProducts().pipe(
+    catchError(error => {
+      // Handle the error here (you can log it or show an error message)
+      console.error('Error loading products:', error);
+      // Return an empty array or other default value in case of error
+      return of([]); // Return an observable of empty array
+    })
+  )
+  .subscribe(
     items =>
       { 
         this.productList = items
@@ -49,6 +63,8 @@ LoadProducts(){
         this.dataSource.sort = this.sort;
       });
 
+      this.subscriptions.add(subscription1);
+      return subscription1;
 }
 
 

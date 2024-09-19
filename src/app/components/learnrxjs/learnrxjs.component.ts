@@ -56,7 +56,7 @@ export class LearnrxjsComponent implements OnInit {
 
   this.behaviorsubject$.subscribe( x => { console.log("Behavior observer  2 : " + x) });
   this.behaviorsubject$.next(3);
-  this.behaviorsubject$.next(4);
+  this.behaviorsubject$.next(4); 
 
 
   // Use ReplaySubject if you want subscribers to receive all previous values.
